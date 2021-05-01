@@ -1,0 +1,19 @@
+package com.bignerdranch.android.retrofitexample.api
+
+import com.bignerdranch.android.retrofitexample.model.Post
+import retrofit2.Response
+import retrofit2.http.GET
+
+interface SimpleApi {
+
+/*
+    @GET("posts/1")
+    suspend fun getPost():  Response<Post>
+
+ */
+
+    @GET("Production/patient")
+    suspend fun getPost(): Response<Post>
+
+
+}
