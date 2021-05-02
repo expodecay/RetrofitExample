@@ -40,8 +40,26 @@ class MainActivity : AppCompatActivity() {
 
 
             if(response.isSuccessful){
+                Log.d("sex Response", response.body()?.sex.toString())
+                Log.d("patient_type Response", response.body()?.patient_type.toString())
+                Log.d("intubed Response", response.body()?.intubed.toString())
+                Log.d("pneumonia Response", response.body()?.pneumonia.toString())
+                Log.d("age Response", response.body()?.age.toString())
+                Log.d("pregnancy Response", response.body()?.pregnancy.toString())
+                Log.d("diabetes Response", response.body()?.diabetes.toString())
+                Log.d("copd Response", response.body()?.copd.toString())
+                Log.d("asthma Response", response.body()?.asthma.toString())
+                Log.d("inmsupr Response", response.body()?.inmsupr.toString())
+                Log.d("hypertension Response", response.body()?.hypertension.toString())
+                Log.d("other_disease Response", response.body()?.other_disease.toString())
+                Log.d("cardiovascular Response", response.body()?.cardiovascular.toString())
+                Log.d("obesity Response", response.body()?.obesity.toString())
+                Log.d("renal_chronic Response", response.body()?.renal_chronic.toString())
+                Log.d("tobacco Response", response.body()?.tobacco.toString())
+                Log.d("contact_other Response", response.body()?.contact_other_covid.toString())
+                Log.d("icu Response", response.body()?.icu.toString())
 
-                textView.text = response.body()?.age.toString()
+                textView.text = "age: " + response.body()?.age.toString()
 
             }else{
                 Log.d("response", response.errorBody().toString())
