@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bignerdranch.android.retrofitexample.adapter.MyAdapter
+import com.bignerdranch.android.retrofitexample.model.Post
 import com.bignerdranch.android.retrofitexample.repository.Repository
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,10 +30,14 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
 
-        viewModel.getCuctomPosts(2, "id", "desc")
-        viewModel.myCustomPosts.observe(this, Observer {response ->
+        val myPost = Post(2,2,"Rick", "This needs to be the patient input")
+        viewModel.pushPost(myPost)
+        viewModel.myResponse.observe(this, Observer {response ->
             if(response.isSuccessful){
-                response.body()?.let { myAdapter.setData(it) }
+                Log.d("Main: ", response.body().toString())
+                // 201: request success -> resource created
+                Log.d("Main: ", response.code().toString())
+                Log.d("Main: ", response.message())
             }else{
                 Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
             }
