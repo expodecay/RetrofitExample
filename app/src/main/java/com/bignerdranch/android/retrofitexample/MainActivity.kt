@@ -27,10 +27,10 @@ class MainActivity : AppCompatActivity() {
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-       // viewModel.getPost()
+        // viewModel.getPost()
 
         val myPost = Post(1,1, 1, 1, 20, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-        , 1, 1)
+            , 1, 1)
         viewModel.pushPostTest(myPost)
         viewModel.myResponse.observe(this, Observer {response ->
             if(response.isSuccessful){
