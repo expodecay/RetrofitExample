@@ -31,6 +31,6 @@ class Repository {
     }
 
     suspend fun pushPostTest(post: Post):Response<Post>{
-        return RetrofitInstance.api.pushPost(post)
+        return RetrofitInstance.api.pushPostTest(post)
     }
 }

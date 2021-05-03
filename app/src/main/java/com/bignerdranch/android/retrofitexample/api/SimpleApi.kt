@@ -42,11 +42,19 @@ interface SimpleApi {
             @Field("body") body: String
     ): Response<Post>
 
-    @POST("Production/patient")
+    @POST("posts")
     suspend fun pushPostTest(
             @Body post: Post
     ): Response<Post>
+
+
     /*
+
+     @POST("Production/patient")
+    suspend fun pushPostTest(
+            @Body post: Post
+    ): Response<Post>
+
     @GET("Production/patient")
     suspend fun getPost(): Response<Post>
 
