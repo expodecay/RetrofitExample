@@ -21,20 +21,8 @@ class MainActivity : AppCompatActivity() {
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-        viewModel.getPost()
-        viewModel.myResponse.observe(this, Observer {response ->
+        //viewModel.getPost()
 
-
-            if(response.isSuccessful){
-                Log.d("Response", response.body()?.userId.toString())
-                Log.d("Response", response.body()?.id.toString())
-                Log.d("Response", response.body()?.title!!)
-                textView.text = response.body()?.title!!
-                Log.d("Response", response.body()?.body!!)
-            }else{
-                Log.d("response", response.errorBody().toString())
-                textView.text = response.code().toString()
-            }
 
 
 
@@ -89,6 +77,18 @@ class MainActivity : AppCompatActivity() {
             Log.d("Response", response.icu.toString())
 
              */
-        })
+
+
+        button.setOnClickListener{
+            val myNumber = number_editText.text.toString()
+            viewModel.getPost2(Integer.parseInt(myNumber))
+            viewModel.myResponse2.observe(this, Observer { response ->
+                if (response.isSuccessful) {
+                    textView.text = response.body().toString()
+                } else {
+
+                }
+            })
+        }
     }
 }
