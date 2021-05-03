@@ -29,15 +29,14 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
         // viewModel.getPost()
 
-        val myPost = Post(1,1, 1, 1, 20, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-            , 1)
+       // val myPost = Post(1,1, 1, 1, 20, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 , 1)
 
-/*
+
         val myPost = Post(2, 2, "Rick", "testing")
 
- */
 
-        viewModel.pushPostTest(myPost)
+
+        viewModel.pushPost(myPost)
         viewModel.myResponse.observe(this, Observer {response ->
             if(response.isSuccessful){
                 Log.d("Main", response.body().toString())
