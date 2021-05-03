@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("contact_other Response", response.body()?.contact_other_covid.toString())
                 Log.d("icu Response", response.body()?.icu.toString())
 
-                textView.text = "age: " + response.body()?.age.toString()
+                textView.text =  response.body().toString()
 
             }else{
                 Log.d("response", response.errorBody().toString())
