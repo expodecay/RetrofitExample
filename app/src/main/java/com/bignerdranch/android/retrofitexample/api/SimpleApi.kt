@@ -4,6 +4,8 @@ import com.bignerdranch.android.retrofitexample.model.Post
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
+import retrofit2.http.QueryMap
 
 interface SimpleApi {
 
@@ -15,6 +17,19 @@ interface SimpleApi {
     suspend fun getPost2(
         @Path("postNumber") number: Int
     ): Response<Post>
+
+    @GET("posts")
+    suspend fun getCuctomPosts(
+        @Query("userId") userId: Int,
+        @Query("_sort") sort: String,
+        @Query("_order") order: String
+    ): Response<List<Post>>
+
+    @GET("posts")
+    suspend fun getCuctomPosts2(
+        @Query("userId") userId: Int,
+        @QueryMap options: Map<String, String>
+    ): Response<List<Post>>
 
 
 /*
