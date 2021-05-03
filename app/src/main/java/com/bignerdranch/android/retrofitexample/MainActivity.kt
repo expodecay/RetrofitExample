@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
         viewModel.getPost()
         viewModel.myResponse.observe(this, Observer {response ->
 
-            /*
+
             if(response.isSuccessful){
-                Log.d("Response", response.body()?.userID.toString())
+                Log.d("Response", response.body()?.userId.toString())
                 Log.d("Response", response.body()?.id.toString())
                 Log.d("Response", response.body()?.title!!)
                 textView.text = response.body()?.title!!
@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
                 textView.text = response.code().toString()
             }
 
-             */
 
 
+/*
             if(response.isSuccessful){
                 Log.d("sex Response", response.body()?.sex.toString())
                 Log.d("patient_type Response", response.body()?.patient_type.toString())
@@ -65,6 +65,8 @@ class MainActivity : AppCompatActivity() {
                 Log.d("response", response.errorBody().toString())
                 textView.text = response.code().toString()
             }
+
+ */
 
             /*
             Log.d("Response", response.sex.toString())
