@@ -30,7 +30,13 @@ class MainActivity : AppCompatActivity() {
         // viewModel.getPost()
 
         val myPost = Post(1,1, 1, 1, 20, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-            , 1, 1)
+            , 1)
+
+/*
+        val myPost = Post(2, 2, "Rick", "testing")
+
+ */
+
         viewModel.pushPostTest(myPost)
         viewModel.myResponse.observe(this, Observer {response ->
             if(response.isSuccessful){

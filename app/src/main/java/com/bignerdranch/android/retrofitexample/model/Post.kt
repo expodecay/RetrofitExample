@@ -27,7 +27,6 @@ val sex:Int,
     val icu:Int
  */
 data class Post (
-        val sex:Int,
         val patient_type:Int,
         val intubed:Int,
         val pneumonia:Int,
