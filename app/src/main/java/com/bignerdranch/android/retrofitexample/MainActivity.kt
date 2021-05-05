@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             if(response.isSuccessful){
                 Log.d("Main: ", response.body().toString())
                 // 201: request success -> resource created
-                Log.d("Main: ", response.code().toString())
+                Log.d("Main: ", response.toString())
                 Log.d("Main: ", response.message())
             }else{
                 Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
